@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadeaux de mariage — Sara & Pierre-Louis</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Josefin+Sans:wght@300;400;600&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #F5F0E8;
+    color: #2563a8;
+    font-family: 'Josefin Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+
+  .card {
+    background: #faf7f2;
+    border: 1.5px solid #a8c8f0;
+    border-radius: 16px;
+    max-width: 480px;
+    width: 100%;
+    padding: 1rem 2rem 2.5rem 2rem;
+    text-align: center;
+  }
+
+  .title {
+    font-family: 'Caveat', cursive;
+    font-size: 2.8rem;
+    color: #2563a8;
+    margin-bottom: 0.2rem;
+    line-height: 1.1;
+  }
+
+  .names {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+    color: #5b9bd5;
+    margin-bottom: 0.3rem;
+    font-weight: 300;
+  }
+
+  .date {
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    color: #5b9bd5;
+    margin-bottom: 2rem;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #a8c8f0;
+    margin: 1.5rem auto;
+    width: 60%;
+  }
+
+  .merci-text {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: #2563a8;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .iban-section {
+    background: #edf4fc;
+    border: 1px solid #a8c8f0;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .iban-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: #5b9bd5;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .iban-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2563a8;
+    letter-spacing: 0.08em;
+    word-break: break-all;
+    margin-bottom: 0.75rem;
+  }
+
+  .bic-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .bic-item {
+    text-align: center;
+  }
+
+  .bic-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: #5b9bd5;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+
+  .bic-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2563a8;
+  }
+
+  .copy-btn {
+    background: transparent;
+    border: 1px solid #2563a8;
+    border-radius: 8px;
+    color: #2563a8;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    margin-top: 0.75rem;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .copy-btn:hover {
+    background: #2563a8;
+    color: #faf7f2;
+  }
+
+  .copy-btn.copied {
+    background: #5b9bd5;
+    color: #faf7f2;
+    border-color: #5b9bd5;
+  }
+
+  .quote {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: #5b9bd5;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    margin-top: 1.5rem;
+  }
+
+  .quote em {
+    font-style: normal;
+  }
+
+  .flowers {
+    margin-bottom: -0.5rem;
+    opacity: 0.7;
+  }
+
+  /* Responsive */
+  @media (max-width: 500px) {
+    .card { padding: 2rem 1.25rem; }
+    .title { font-size: 2.2rem; }
+    .iban-value { font-size: 0.95rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <div class="flowers">
+    <img src="couple-illustration.png" alt="Sara et Pierre-Louis" width="180" height="135" style="max-width: 100%; height: auto;">
+  </div>
+
+  <h1 class="title">Un cadeau pour nous ?</h1>
+  <p class="names">SARA &amp; PIERRE-LOUIS</p>
+  <p class="date">6 juin 2026</p>
+
+  <hr class="divider">
+
+  <p class="merci-text">
+    Votre présence à nos côtés est déjà le plus beau des cadeaux.<br><br>
+    Si vous souhaitez tout de même nous gâter, une contribution à notre cagnotte commune nous toucherait énormément.
+  </p>
+
+  <div class="iban-section">
+    <p class="iban-label">Virement bancaire</p>
+    <p class="iban-value" id="iban-text">LU93002451039500</p>
+    <div class="bic-row">
+      <div class="bic-item">
+        <p class="bic-label">BIC</p>
+        <p class="bic-value">BILLLULL</p>
+      </div>
+      <div class="bic-item">
+        <p class="bic-label">Titulaire</p>
+        <p class="bic-value">PIERRE-LOUIS MARTIN, SARA AYACH</p>
+      </div>
+    </div>
+    <button class="copy-btn" id="copyBtn" onclick="copyIban()">Copier l'IBAN</button>
+  </div>
+
+  <hr class="divider">
+
+
+</div>
+
+<script>
+function copyIban() {
+  const iban = document.getElementById('iban-text').innerText;
+  navigator.clipboard.writeText(iban).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = '✓ Copié !';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copier l\'IBAN';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>
